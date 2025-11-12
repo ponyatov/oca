@@ -1,0 +1,1 @@
+# Функции map, filter, fold
