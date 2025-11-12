@@ -1,0 +1,17 @@
+{
+    "recommendations": [
+        "stkb.rewrap",
+        "ms-vscode.makefile-tools",
+        "IBM.output-colorizer",
+        "usernamehw.errorlens",
+        // formatters
+        "xaver.clang-format",
+        "esbenp.prettier-vscode",
+        "foxundermoon.shell-format",
+        // Web/JS
+        "esbenp.prettier-vscode",
+        "dtsvet.vscode-wasm",
+        // OCaml
+        "ocamllabs.ocaml-platform",
+    ]
+}
