@@ -11,12 +11,8 @@ let github = "https://github.com/ponyatov/oca"
 
 let readme () =
   let f = open_out "README.md" in
-  Printf.fprintf f "# ![](%s) `%s` %s
-## %s
-
-(c) %s <<%s>> %i %s
-
-github: %s
-" logo app version title author email year license github;
+  Printf.fprintf f
+    "# ![](%s) `%s` %s\n## %s\n\n(c) %s <<%s>> %i %s\n\ngithub: %s\n" logo app
+    version title author email year license github;
   close_out f
 (* readme () *)
