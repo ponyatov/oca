@@ -67,5 +67,5 @@ let area = function
 - **Coq**: система интерактивного доказательства теорем
 - **Frama-C**: фреймворк для анализа C-кода
 - **Facebook Flow**: статический анализатор JavaScript
-- ранние прототипы языка [[Rust/Rust|Rust]] (2006-2009)
+- ранние прототипы языка [[Rust/Rust|**rustboot**]] (2006-2009)
 	- Разработчик: Грейдон Хор ([[people/Graydon Hoare]]) в Mozilla Research
