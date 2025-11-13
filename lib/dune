@@ -1,3 +1,9 @@
+(executable
+ (public_name oca)
+ (name oca)
+ (modules oca)
+ (libraries meta ast))
+
 (library
  (name ast)
  (modules ast))
@@ -6,10 +12,8 @@
  (name meta)
  (modules meta))
 
-(executable
- (public_name oca)
- (name oca)
- (modules oca)
- (libraries meta ast)
+(library
+ (name files)
+ (modules files)
  (preprocess
   (pps ppx_string)))

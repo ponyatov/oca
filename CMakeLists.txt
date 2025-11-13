@@ -4,25 +4,12 @@ project(${CMAKE_PROJECT_NAME} VERSION 0.0.1 LANGUAGES C CXX ASM)
 
 include(version)  # binary files naming by version & git branch/hash
 include(src)      # scan project for source code files
-include(syntax)   # parser generators (flex,yacc/bison,ragel,lemon,..)
-include(net)      # raw packets networking
 
 message("-- |")
 message("-- | toolchain: " ${CMAKE_CXX_COMPILER} " @ " ${CMAKE_TOOLCHAIN_FILE})
 message("-- |      host: " ${CMAKE_HOST_SYSTEM_NAME}-${CMAKE_HOST_SYSTEM_VERSION})
 message("-- |    target: " "hw:" ${HW} " cpu:" ${CPU} " arch:" ${ARCH} " os:" ${OS})
-message("-- |   startup: " "${S}")
-message("-- |    linker: " "${LD}")
 message("-- |    binary: " "${CMAKE_INSTALL_PREFIX}/${BIN_OUTPUT_NAME}${CMAKE_EXECUTABLE_SUFFIX}")
-message("-- |      wasm: " "${WASM}")
-message("-- |    kaitai: " "${KSY}")
-message("-- |")
-if(PCAP_FOUND)
-message("-- | PCAP: ${PCAP_VERSION}")
-endif()
-if(PCPP_FOUND)
-message("-- | PCPP: ${PCPP_VERSION}")
-endif()
 message("-- |")
 
 add_executable(${CMAKE_PROJECT_NAME}

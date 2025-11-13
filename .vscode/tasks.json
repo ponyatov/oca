@@ -16,6 +16,15 @@
             "problemMatcher" : []
         },
         {
+            "label"          : "dune: build",
+            "type"           : "shell",
+            "group"          : {"kind": "build", "isDefault": true },
+            // "dependsOn"      : "CMake: build",
+            "command"        : "dune build",
+            "problemMatcher" : [],
+            "presentation"   : {"showReuseMessage": false, "focus": false, "reveal": "silent", "close": true}
+        },
+        {
             "label"          : "doxy: gen",
             "type"           : "shell",
             "group"          : {"kind": "build", "isDefault": true },

@@ -1,9 +1,12 @@
+(* #require "ppx_string" *)
 let app = "oca"
 
 let cpp () =
-  let f = open_out "src/" in
-  Printf.fprintf f
-    "# ![](%s) `%s` %s\n## %s\n\n(c) %s <<%s>> %i %s\n\ngithub: %s\n" logo app
-    version title author email year license github;
+  let f = open_out "src/oca.cpp" in
+  Printf.fprintf f "%s"
+    [%string "#include \"%{app}.hpp\"
+int main() { return 0; }
+"];
   close_out f
-(* readme () *)
+
+(* cpp () *)

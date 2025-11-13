@@ -1,3 +1,5 @@
+(** shared info on a whole project: (c) etc *)
+
 let logo = "doc/logo.png"
 let app = "oca"
 let version = "0.0.1"
