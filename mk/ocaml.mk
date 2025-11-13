@@ -7,7 +7,7 @@ $(OPAM):
 $(OCAMLC): $(OPAM)
 	opam switch set default ; eval $(opam env --switch=default)
 # 	opam switch create $(OCAML_VER) ocaml-base-compiler.$(OCAML_VER)
-# 	opam switch set $(OCAML_VER) ; eval $(opam env --switch=$(OCAML_VER))
+# 	opam switch set    $(OCAML_VER) ; eval $(opam env --switch=$(OCAML_VER))
 # 	opam switch list-available ; opam switch list
 # 	opam switch create cs3110 ocaml-base-compiler.5.3.0
 # 	opam switch set    cs3110 ; eval $(opam env --switch=cs3110)
