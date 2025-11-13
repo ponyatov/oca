@@ -5,3 +5,11 @@
 (library
  (name meta)
  (modules meta))
+
+(executable
+ (public_name oca)
+ (name oca)
+ (modules oca)
+ (libraries meta ast)
+ (preprocess
+  (pps ppx_string)))

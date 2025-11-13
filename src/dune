@@ -1,6 +1,0 @@
-(executable
- (public_name oca)
- (name oca)
- (libraries meta ast)
- (preprocess (pps ppx_string))
-)
