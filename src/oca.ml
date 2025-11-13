@@ -1,3 +1,3 @@
-import { readme } from '@meta/readme';
+(* import { readme } from '@meta/readme';
 
-readme();
+   readme(); *)
