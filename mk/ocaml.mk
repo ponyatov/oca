@@ -1,27 +1,25 @@
-ocaml: $(DUNE) $(UTOP) $(OFMT) $(OLSP)
+ocaml: $(UTOP) $(DUNE) $(OFMT) $(OLSP) .ocamlformat .ocamlformat
 
 $(OPAM):
 	bash -c "sh <(curl -fsSL https://opam.ocaml.org/install.sh)"
-	opam init -a
+$(HOME)/.opam: $(OPAM)
+# sudo apt install -uy bubblewrap | --disable-sandboxing
+	opam init --bare --disable-sandboxing -a
 
 $(OCAMLC): $(OPAM)
-	opam switch set default ; eval $(opam env --switch=default)
-# 	opam switch create $(OCAML_VER) ocaml-base-compiler.$(OCAML_VER)
-# 	opam switch set    $(OCAML_VER) ; eval $(opam env --switch=$(OCAML_VER))
 # 	opam switch list-available ; opam switch list
-# 	opam switch create cs3110 ocaml-base-compiler.5.3.0
-# 	opam switch set    cs3110 ; eval $(opam env --switch=cs3110)
+	opam switch create cs3110 ocaml-base-compiler.5.2.0 && touch $@
+	opam switch set cs3110 ; eval $(opam env --switch=cs3110)
 
-$(DUNE) $(UTOP) $(OFMT) $(OLSP): $(OCAMLC)
-	opam install -y dune utop ocamlformat ocaml-lsp-server
-	touch $(DUNE) $(UTOP) $(OFMT) $(OLSP)
+$(UTOP) $(DUNE) $(OFMT) $(OLSP): $(OCAMLC)
+	opam install -y utop dune ocamlformat ocaml-lsp-server ppx_string
 	$(MAKE) .ocamlformat .ocamlinit
+
+.ocamlformat: $(OFMT)
+	echo "version = `ocamlformat --version`" > $@
+
+.ocamlinit:$(UTOP)
+	echo "#use "topfind";;" > $@
 
 $(CAMLP5): $(OCAMLC)
 	opam install -y camlp5 && touch $@
-
-.ocamlformat:
-	echo "version = `ocamlformat --version`" > $@
-
-.ocamlinit:
-	echo "#use "topfind";;" > $@
