@@ -17,3 +17,7 @@
  (modules files)
  (preprocess
   (pps ppx_string)))
+
+(library
+ (name graph)
+ (modules graph))
