@@ -1,2 +1,3 @@
+(* #use "lib/mycode.ml";; *)
 #use "topfind";;
 #require "ppx_string";;
