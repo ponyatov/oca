@@ -12,7 +12,7 @@ $(OCAMLC): $(OPAM)
 	opam switch set cs3110 ; eval $(opam env --switch=cs3110)
 
 $(UTOP) $(DUNE) $(OFMT) $(OLSP): $(OCAMLC)
-	opam install -y utop dune ocamlformat ocaml-lsp-server ppx_string
+	opam install -y utop dune ocamlformat ocaml-lsp-server ppx_string menhir
 	$(MAKE) .ocamlformat .ocamlinit
 
 .ocamlformat: $(OFMT)
