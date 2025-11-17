@@ -2,11 +2,12 @@
  (public_name oca)
  (name oca)
  (modules oca)
- (libraries meta ast))
+ (libraries meta syntax))
 
 (library
- (name ast)
- (modules ast))
+  (name syntax)
+  (modules parser lexer ast)
+  (libraries uchar))
 
 (library
  (name meta)
